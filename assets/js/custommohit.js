@@ -6,6 +6,7 @@ if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elain
     //document.getElementById("top-hero").style["background-size"] = "auto";
 }
 var mydata;
+var sitename=" ms";
 $.get("https://pru-boot.herokuapp.com/sendmail", function(data, status) {
     //alert("Data: " + data + "\nStatus: " + status);
 });
@@ -14,7 +15,7 @@ $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?', function(data) {
     mydata = data;
     //console.log(mydata.geobytescity);
 
-    $.get("https://pru-boot.herokuapp.com/sendmessage/" + mydata.geobytescity + "/" + mydata.geobytescode, function(data, status) {
+    $.get("https://pru-boot.herokuapp.com/sendmessage/" + mydata.geobytescity +sitename+ "/" + mydata.geobytescode, function(data, status) {
         //alert("Data: " + data + "\nStatus: " + status);
     });
 
